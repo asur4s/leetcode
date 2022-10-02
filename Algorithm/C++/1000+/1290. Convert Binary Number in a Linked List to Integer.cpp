@@ -14,3 +14,16 @@ public:
         return sum;
     }
 };
+
+// better
+class Solution {
+public:
+    int getDecimalValue(ListNode* head) {
+        int sum = head->val;
+        while(head->next != NULL){
+            sum = sum * 2 + head->next->val;
+            head = head->next;
+        }
+        return sum;
+    }
+};
