@@ -33,7 +33,7 @@ public:
                 NewHead = NewHead->next;
             }else{
                 next = cur->next;
-            }       
+            }
         }
 
         return pHead->next;
