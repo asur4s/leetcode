@@ -1,3 +1,4 @@
+// 非递归写法
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
@@ -37,5 +38,30 @@ public:
         }
 
         return pHead->next;
+    }
+};
+
+
+// 递归写法
+class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        if(nullptr == head || nullptr == head->next){
+            return head;
+        }
+
+        ListNode *next;
+        next = head->next;
+        
+        if(head->val == next->val){
+            while(nullptr != next && next->val == head->val){
+                next = next->next;
+            }
+            next = deleteDuplicates(next);
+            return next;
+        }else{
+            head->next = deleteDuplicates(head->next);
+            return head;
+        }
     }
 };
