@@ -16,10 +16,9 @@ public:
 
         if(k == 0){
             return head;
-        }else{
-            cur->next = head;
         }
 
+        cur->next = head;
         for(int i=0; i<len-k; i++){
             cur = cur->next;
         }
