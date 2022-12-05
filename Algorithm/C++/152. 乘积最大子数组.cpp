@@ -1,20 +1,20 @@
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
-        int maxAns = nums[0];
-        int preMax = nums[0], preMin = nums[0];
+        int preMin = nums[0], preMax = nums[0];
+        int maxAns = nums[0], size = nums.size();
         int pX, pN;
-        for(int i=1; i<nums.size(); i++){
+        for(int i=1; i<size; i++){
             pX = preMax;
             pN = preMin;
             if(nums[i] > 0){
-                preMax = max(pX * nums[i], nums[i]);
                 preMin = min(pN * nums[i], nums[i]);
+                preMax = max(pX * nums[i], nums[i]);
             }else{
-                preMax = max(pN * nums[i], nums[i]);
                 preMin = min(pX * nums[i], nums[i]);
-            }
-            if(maxAns < preMax){
+                preMax = max(pN * nums[i], nums[i]);
+            } 
+            if(preMax > maxAns){
                 maxAns = preMax;
             }
         }
