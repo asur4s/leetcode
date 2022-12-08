@@ -21,7 +21,7 @@ class Solution {
         while (j <= r) {
             tmp[cnt++] = nums[j++];
         }
-        for (int i = 0; i < r - l + 1; ++i) {
+        for (int i = 0; i < cnt - 1; ++i) {
             nums[i + l] = tmp[i];
         }
     }
