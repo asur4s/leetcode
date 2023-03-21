@@ -6,7 +6,7 @@ clean:
 	cargo fix --allow-dirty --allow-staged
 	cargo fmt
 
-upload: 
+push: 
 	git add .
 	git commit -m "Update"
 	git push
