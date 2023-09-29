@@ -1,3 +1,4 @@
+// https://leetcode.cn/problems/min-stack/description/
 class MinStack {
     protected dataStack: number[] = [];
     protected minStack: number[] = [];
