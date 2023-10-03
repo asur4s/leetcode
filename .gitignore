@@ -4,3 +4,8 @@ a.out
 .vscode
 Algorithm/Rust/study/target
 target
+.pythonlibs
+.upm
+poetry.lock
+pyproject.toml
+*replit*
